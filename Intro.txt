@@ -52,3 +52,36 @@ using Timer API
 ----------------
  => to execute some action(s) on timeout/interval
 
+
+
+https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
+
+
+
+---------------------------------------------------------------
+web UI
+---------------------------------------------------------------
+
+- HTML
+- CSS
+- javascript
+ +
+- browser's APIs ( DOM , XHR/fetch , ..)
+
+-------------------------------------------------------------
+
+limitations of plain-javascript ( your code) with browser APIs
+
+=>  browser compatability issues
+    - https://caniuse.com/
+=> memory management issues
+=> performance issues
+=> code organization is bad`
+=> data binding is manual
+=> too much code
+
+
+
+
+Todo : http://latentflip.com/loupe/
+
