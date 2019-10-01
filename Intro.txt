@@ -139,3 +139,29 @@ soln:
    -> parent -> child  via props
       child  -> parent via events
       i.e uni-directional data-flow 
+
+
+
+--------------------------------------------------
+
+how to create react app ?
+
+> node -v
+> npm -v
+
+> sudo npm i -g yarn  ( optional )
+
+> npx create-react-app <app-name>
+
+> cd <app-name>
+
+> npm start or yarn start
+
+-----------------------------------------------
+
+> npx create-react-app eat-it-v1
+> cd eat-it-v1
+> npm i bootstrap
+
+-----------------------------------------------
+
