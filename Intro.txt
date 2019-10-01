@@ -3,24 +3,17 @@
 web UI
 --------
 
-
 UI = content/data + style + behavior
-
 
  content  ==> HTML
  style    ==> CSS
  behavior ==> javascript
 
-
-
-
-> npm i -g live-server
-
-
 ---------------------------------------------------------------------------------------
 
 what javascript language can do on HTML-page 
 in browser envi?
+
 
 using w3c standard web APIs, 
 javascript programs can do any dynamic actions on web-page within browser-envi
@@ -58,6 +51,7 @@ https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5
 
 
 
+i.e
 ---------------------------------------------------------------
 web UI
 ---------------------------------------------------------------
@@ -76,12 +70,72 @@ limitations of plain-javascript ( your code) with browser APIs
     - https://caniuse.com/
 => memory management issues
 => performance issues
-=> code organization is bad`
-=> data binding is manual
+=> code organization is bad
 => too much code
 
+-------------------------------------------------------------
 
+soln:
 
+   -> using third-party's javascript lib
 
-Todo : http://latentflip.com/loupe/
+   1. jquery
 
+      - browser compatability issues are solved 
+    
+   MVC pattern based lib
+   -----------------------
+
+   1. knockout.js
+   2. backbone.js
+   3. ember.js
+   4. Angular.js  1.x
+
+   .......
+
+   component based lib
+   --------------------
+
+   1. react.js
+   2. Angular
+   3. Vue
+   4. Polymer.js
+   ...
+
+   --------------------------------------------------
+
+   - UI using component based arch
+
+   what is component ?
+
+      - any UI-fragment with single-responsibility
+
+      e.g  search,calandar,.....
+
+      why ?
+
+      -- smaller & simpler  => easy to manage
+
+   --------------------------------------------------
+
+   is HTML based on component-arch ?
+
+   - yes
+
+   --------------------------------------------------
+
+   principles of component(s)
+   --------------------------
+
+   -> must have single-responsibility
+      => -- smaller & simpler  => easy to manage
+   -> must be loose-coupled from other   
+      => easy to re-use
+   -> can customize via props  
+      => based on req..
+   
+   -> can hold state if requied 
+   -> if state changes, comp must re-render  
+   -> parent -> child  via props
+      child  -> parent via events
+      i.e uni-directional data-flow 

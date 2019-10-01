@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+</head>
+
+<body class="container">
+
+    <hr />
+    <h1>UI using comp arch</h1>
+    <hr />
+
+    <div class="alert alert-danger">
+        <input onchange="handleChange(event)" id="inp1" type="number" class="form-control" />
+        <hr />
+        <span id="disp" class="badge badge-dark">0</span>
+    </div>
+
+    <script>
+
+        function handleChange(e) {
+            console.log(e);
+            document.getElementById('disp').innerHTML = e.target.value
+        }
+
+        // var inp1 = document.getElementById('inp1');
+        // var i = 0;
+        // setInterval(() => {
+        //     i++;
+        //     inp1.value = i;
+        // }, 2000);
+
+    </script>
+
+
+</body>
+
+</html>

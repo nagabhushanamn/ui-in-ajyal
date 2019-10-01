@@ -4,20 +4,20 @@ console.log("-index.js-");
 // using DOM API
 //----------------------------------------------
 
-var box = document.getElementsByClassName('alert')[0];
-var nextBtn = document.querySelector('.btn-dark');
-var hideBtn = document.querySelector('.btn-danger');
-var showBtn = document.querySelector('.btn-primary');
+// var box = document.getElementsByClassName('alert')[0];
+// var nextBtn = document.querySelector('.btn-dark');
+// var hideBtn = document.querySelector('.btn-danger');
+// var showBtn = document.querySelector('.btn-primary');
 
-nextBtn.addEventListener('click', e => {
-    box.innerHTML = "learn UI tech"
-})
-hideBtn.addEventListener('click', e => {
-    box.style.display = 'none'
-})
-showBtn.addEventListener('click', e => {
-    box.style.display = ''
-})
+// nextBtn.addEventListener('click', e => {
+//     box.innerHTML = "learn UI tech"
+// })
+// hideBtn.addEventListener('click', e => {
+//     box.style.display = 'none'
+// })
+// showBtn.addEventListener('click', e => {
+//     box.style.display = ''
+// })
 
 
 //----------------------------------------------
@@ -68,6 +68,7 @@ function loadAndRenderTodos(count) {
 
 
 
+
 function loadAndRenderTodosV2(count) {
     var url = `https://jsonplaceholder.typicode.com/todos?_limit=${count}`
     let promise = fetch(url);
@@ -89,9 +90,6 @@ function loadAndRenderTodosV2(count) {
         });
     document.getElementById('progress').innerHTML = "loading todos, please wait.."
 }
-
-
-
 
 //----------------------------------------------
 // using DOM + Time API
