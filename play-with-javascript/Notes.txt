@@ -1,0 +1,61 @@
+
+
+
+-------------------------------------------------------
+why javascript ?
+
+=> UI application i.e Web-UI ( with browser's JS-engine/runtime)
++
+=> server-side appln ( Node.js )
+
+-------------------------------------------------------
+
+
+-------------------------------------------------------
+javascript features
+
+=> dynamic types 
+=> FP + OOP
+
+=> by default in javascript, Non-blocking/Asyncronous IO
+=> single-thread process
+
+-------------------------------------------------------
+
+
+-------------------------------------------------------
+
+javascript is based 'ECMAScript' spec
+
+latest version : ECMAScript-2015  / ES6
+
+-------------------------------------------------------
+
+
+
+-------------------------------------------------------
+
+How to run javascript program ?
+
+==> using javascript-runtime/engine
+
+in browser envi
+
+1. chrome    ( v8 ==> c++ )
+2. firefox   ( rhino/spider-monkey ==> java )
+3. IE / Edge ( chakra )
+4. Safari    ( nitro )
+...
+
+
+other envi
+
+1. Node.js   ( v8 )
+...
+
+
+
+---------------------------------------------------------
+"Hello! World"
+---------------------------------------------------------
+

@@ -1,0 +1,5 @@
+
+
+
+let food = getFood()
+console.log("yummy with " + food.name)
