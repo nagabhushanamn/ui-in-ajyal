@@ -88,6 +88,7 @@ var ref=new Consructor()
 //----------------------------------
 // ES6 ==> class
 //----------------------------------
+
 class Person {
     constructor(name, age) {
         this.name = name;
@@ -100,10 +101,16 @@ class Person {
         console.log(`im ${this.age} old`);
     }
 }
+
 var p1 = new Person('Nag', 35);
+p1.sayName();
+p2.sayAge();
+
 /*
     imp-note :
-    by default, all javascipt onjects ae extesible i.e we can add new props on fly
+    by default, all javascipt objects are extensible
+    i.e we can add/remove new props on fly
 */
+
 p1.currentAddress = "abu dhabi"; // add new prop
 delete p1.age; // delete prop

@@ -1,6 +1,6 @@
 
 
-// liteal object ==> any object , we can ceate without 'new' keywod
+// liteal object ==> any object, that we can create without 'new' keyword
 
 //-----------------------------------
 // Object
@@ -21,7 +21,6 @@ var newConfigObj = {
     }
 }
 
-
 //-----------------------------------
 // Array
 //-----------------------------------
@@ -37,7 +36,6 @@ todayMenu.push("non-veg")
 var newTodayMenu = [
     "veg1", "veg2", "veg3", "non-veg"
 ]
-
 
 //-----------------------------------
 // RegExp

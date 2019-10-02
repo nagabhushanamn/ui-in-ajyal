@@ -10,8 +10,8 @@
  *  ==> memory/stack-frame with args & local variable(s)
  *
  * phase1 : creation / push
- *          ==> any variable which is declared with 'var' keyword,
- *              always get hoisted with default value  ( undefined )
+ *          note: any variable which is declared with 'var' keyword,
+ *                always get hoisted with default value  ( undefined )
  * phase2 : execution / pop
  *
  *
@@ -29,10 +29,14 @@
     */
 
 
+
+
 console.log("- im here -");
+
 
 // var v = 12;
 // console.log(v);
+
 
 //---------------------------------
 // Quiz-1
@@ -60,7 +64,6 @@ console.log("- im here -");
 //     f2(); // f2-scope <-- f1-scope
 // }
 // f1(); // f1-scope <-- global-scope
-
 
 
 //---------------------------------
@@ -99,7 +102,6 @@ console.log("- im here -");
  */
 
 //----------------------------------------------------------
-
 
 // console.log(v);
 // let v = 12;  

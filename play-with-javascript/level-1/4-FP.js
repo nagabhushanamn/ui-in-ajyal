@@ -1,14 +1,13 @@
 
 
 /*
-
  FP => Functional Progamming
-
 */
 
 
 
 // How to create function in javascipt lang?
+
 
 // ----------------------------------------------------
 // way-1 : function declaation / Named  function
@@ -22,8 +21,6 @@
 */
 
 // console.log(add(12, 13));
-
-
 
 // function add(n1, n2) {
 //     return n1 + n2;
@@ -47,9 +44,8 @@
 // console.log(add(12, 13));
 
 
-
 // ----------------------------------------------------
-// function parameters
+// function parameter
 // ----------------------------------------------------
 
 // function func(a, b, c, d, e) {
@@ -64,7 +60,7 @@
 //     console.log(arguments[3]);
 //     console.log(arguments[4]);
 // }
-// func(12, 13, 14, 15);
+// func(12, 13, 14, 15,16);
 
 
 // e.g
@@ -79,8 +75,6 @@
 //     }
 //     return result;
 // }
-
-
 
 // ----------------------------------------------------
 // Quiz
@@ -107,8 +101,6 @@
 // }
 // func(undefined,20);
 
-
-
 // ----------------------------------------------------
 // function with rest param
 // ----------------------------------------------------
@@ -122,11 +114,9 @@
 // }
 // func(1, 2, 3, 4, 5, 6, 7)
 
-
 // ----------------------------------------------------
 // functional programming principls
 // ----------------------------------------------------
-
 
 /**
  *  #1 : function is a object
@@ -143,7 +133,7 @@
 
 /**
  *
- * #2 : paratemer of function can be other function
+ * #2 : parameter of function can be other function
  *
  */
 
@@ -184,7 +174,6 @@ let es = function () {
 // console.log(numbers);  
 
 
-
 //--------------------------------------------------
 
 /**
@@ -207,3 +196,4 @@ function teach() {
 let learnFunc=teach();
 learnFunc()
 learnFunc();
+
