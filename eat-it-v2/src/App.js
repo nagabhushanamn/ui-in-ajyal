@@ -23,11 +23,11 @@ class App extends React.Component {
       },
     ]
   }
+  
   renderItems(items) {
-    let currentTab = this.state.currentTab
     return items.map(item => {
       return (
-        <Item value={item} />
+        <Item value={item} key={item.id}/>
       )
     })
   }

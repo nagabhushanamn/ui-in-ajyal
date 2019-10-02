@@ -3,6 +3,10 @@ import React, { Component } from 'react';
 class Item extends Component {
     state = {
         currentTab: 1,
+        reviews: [
+            { author: 'who1', stars: 5, body: 'sample review-1' },
+            { author: 'who2', stars: 2, body: 'sample review-2' }
+        ]
     }
     changeTab(e, tabIndex) {
         e.preventDefault();
