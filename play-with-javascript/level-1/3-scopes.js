@@ -34,57 +34,57 @@
 console.log("- im here -");
 
 
-// var v = 12;
-// console.log(v);
+var v = 12;
+console.log(v);
 
 
 //---------------------------------
 // Quiz-1
 //---------------------------------
 
-// var v = 12;
+var v = 12;
 
-// function f1() {
-//     console.log(v);
-//     var v = 13;
-// }
-// f1(); // f1-scope  <--- global-scope
+function f1() {
+    console.log(v);
+    var v = 13;
+}
+f1(); // f1-scope  <--- global-scope
 
 
 //---------------------------------
 // Quiz-2
 //--------------------------------
 
-// var v = 12;
-// function f1() {
-//     function f2() {
-//         console.log(v);
-//     }
-//     var v = 13;
-//     f2(); // f2-scope <-- f1-scope
-// }
-// f1(); // f1-scope <-- global-scope
+var v = 12;
+function f1() {
+    function f2() {
+        console.log(v);
+    }
+    var v = 13;
+    f2(); // f2-scope <-- f1-scope
+}
+f1(); // f1-scope <-- global-scope
 
 
 //---------------------------------
 // Quiz-3
 //--------------------------------
 
-// var v=12;
-// var v=13;
+var v=12;
+var v=13;
 
-// console.log(v);  
+console.log(v);  
 
 
 //---------------------------------
 // Quiz-4
 //--------------------------------
 
-// var v = 12;
-// if (true) {
-//     var v = 13;
-// }
-// console.log(v);  
+var v = 12;
+if (true) {
+    var v = 13;
+}
+console.log(v);  
 
 
 //----------------------------------------------------------
@@ -103,30 +103,30 @@ console.log("- im here -");
 
 //----------------------------------------------------------
 
-// console.log(v);
-// let v = 12;  
+console.log(v);
+let v = 12;  
 
 //----------------------------------------------------------
 
-// let v = 12;
-// let v = 13;
+let v = 12;
+let v = 13;
 
 //----------------------------------------------------------
 
-// let v = 12;
-// if (true) {
-//     let v = 13;
-// }
-// console.log(v);  
+let v = 12;
+if (true) {
+    let v = 13;
+}
+console.log(v);  
 
 //----------------------------------------------------------
 
-// const trainer = {
-//     name: 'dilip'
-// }
+const trainer = {
+    name: 'dilip'
+}
 
-// // trainer = null; // error
-// trainer.name = "Nag"
+// trainer = null; // error
+trainer.name = "Nag"
 
 
 //----------------------------------------------------------

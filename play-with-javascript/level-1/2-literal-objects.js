@@ -52,3 +52,4 @@ if (regExp.test(mobNumber)) {
 } else {
     console.log("invalid mob number");
 }
+

@@ -6,15 +6,15 @@
 // Quiz
 //---------------------------------------
 
-// // let pName = "global";
-// let person = {
-//     pName: 'Nag', // obj's property..
-//     sayName: function () {
-//         // let pName = "local";
-//         console.log("im " + this.pName);
-//     }
-// }
-// person.sayName();
+// let pName = "global";
+let person = {
+    pName: 'Nag', // obj's property..
+    sayName: function () {
+        // let pName = "local";
+        console.log("im " + this.pName);
+    }
+}
+person.sayName();
 
 
 
@@ -41,10 +41,10 @@ let p2 = {
     sayName: sayNameForAll
 }
 
-// sayNameForAll(); // will throw error. this --> undefined
+sayNameForAll(); // will throw error. this --> undefined
 
-// p1.sayName();
-// p2.sayName();
+p1.sayName();
+p2.sayName();
 
 
 //-----------------------------------
@@ -62,14 +62,14 @@ function doTeach(sub, duration, location) {
 
 let tnr = { name: 'Nag' }
 
-// tnr.doTeach=doTeach;
-// tnr.doTeach('javascript', 40, 'abu dhabi');
+tnr.doTeach = doTeach;
+tnr.doTeach('javascript', 40, 'abu dhabi');
 
 // way-1:
-// doTeach.call(tnr, 'javascript', 40, 'abu-dhabi');
+doTeach.call(tnr, 'javascript', 40, 'abu-dhabi');
 
 // way-2:
-// doTeach.apply(tnr, ['javascript', 40, 'abu-dhabi'])
+doTeach.apply(tnr, ['javascript', 40, 'abu-dhabi'])
 
 //way-3:
 let newF = doTeach.bind(tnr, 'javascript')
