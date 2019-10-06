@@ -55,7 +55,7 @@ function getQuestion(question) {
                 question.options.map(option => {
                 let optionTemplate = `
                         <li class="list-group-item bg-light">
-                            <input name="q-option" type="radio" value="${option}" /> &nbsp; ${option}
+                            <input name="q-option" type="radio" value="${option}" ${userAnswers[question.number]===option?'checked':''} /> &nbsp; ${option}
                         </li>`
                 return optionTemplate;          
                 }).join(" ")
@@ -78,6 +78,7 @@ function renderQuestion() {
             answerEle.addEventListener('click', recordAns)
         })
 }
+
 
 renderQuestion();
 prevBtn.disabled = true;
