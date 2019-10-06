@@ -1,9 +1,9 @@
-import React from 'react';
+import React,{Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Navbar from './components/Navbar'
 import Item from './components/Item'
 
-class App extends React.Component {
+class App extends Component {
 
   state = {
     items: [

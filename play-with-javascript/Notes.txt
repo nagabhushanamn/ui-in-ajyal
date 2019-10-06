@@ -54,3 +54,93 @@ other envi
 ...
 
 
+
+-------------------------------------------------------
+
+
+.js-development without module standards
+
+    problems:
+
+        => global naming collisions
+        => loading modules in order is manual
+
+    soln:
+
+    => using module standards & loaders
+
+        -> commonJS module standard  ( third-party )
+        -> ES6 module standard ( ECMAScript spec)
+
+------------------------------------------------------     
+commonJS module standard
+------------------------------------------------------     
+
+ Rules:
+
+    -> all variables in .js file are private default
+    -> to abstract/export any vaiables , use 'module.exports' object
+    -> to import any module , use 'require' function
+    -> group related modules into package with description file ( package.json )
+
+imp-note : Node.js runtime already 
+           implemented this standard as default module standard
+
+------------------------------------------------------     
+ES6 module standard
+------------------------------------------------------     
+
+ Rules:
+
+    -> all variables in .js file are private default
+    -> to abstract/export any vaiables , use 'export' keyword
+    -> to import any module , use 'import' keyword
+    -> group related modules into package with description file ( package.json )
+
+
+
+NPM ( Node Package Manager )
+----------------------------
+
+    - cli tool , runs in Node.js
+
+    why we need ?
+
+    => to publish/install javascript packages fom NPM repositoy
+
+----------------------------------------------------------------    
+
+
+
+ > build tools
+
+ > how java works in browser?
+
+
+ 
+----------------------------------------------------------------    
+
+why we need  build tools for UI application?
+
+  -> to convert higher-version code to lower-version to target old browsers
+        https://kangax.github.io/compat-table/es6/     
+        => transpile/compile  ==> ES6 --> ES5
+            e.g babel 
+
+   -> to bundle many modules into one or 2 files
+        => module bundler
+            e.g webpack
+                -> cli tool & runs in node.js
+
+    -> minification / uglify
+
+
+------------------------------------------------            
+
+
+
+
+
+
+
+
