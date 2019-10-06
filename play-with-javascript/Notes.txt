@@ -110,16 +110,6 @@ NPM ( Node Package Manager )
 
 ----------------------------------------------------------------    
 
-
-
- > build tools
-
- > how java works in browser?
-
-
- 
-----------------------------------------------------------------    
-
 why we need  build tools for UI application?
 
   -> to convert higher-version code to lower-version to target old browsers
@@ -132,15 +122,8 @@ why we need  build tools for UI application?
             e.g webpack
                 -> cli tool & runs in node.js
 
-    -> minification / uglify
+    -> minify / uglify
 
 
 ------------------------------------------------            
-
-
-
-
-
-
-
 
