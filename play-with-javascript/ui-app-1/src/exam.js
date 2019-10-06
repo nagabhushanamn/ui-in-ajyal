@@ -32,9 +32,10 @@ let questions = [
         answer: 'none'
     }
 ]
-let question = questions[0];
 
-
+let idx = 0;
+let userAnswers = {}
+let report = {};
 
 
 let nextBtn = document.getElementById('next')
@@ -42,7 +43,7 @@ let prevBtn = document.getElementById('prev')
 let endBtn = document.getElementById('end')
 
 
-function renderNextOrPevQuestion(question) {
+function getQuestion(question) {
     let qTemplate = `
         <div id="question-box">
             <span class="badge badge-dark">Q. ${question.number} / ${questions.length}</span>
@@ -50,23 +51,39 @@ function renderNextOrPevQuestion(question) {
         </div>
         <hr />
         <ul id="options-box">
-            ${question.options.map(option => {
-        return `
-                <li class="list-group-item bg-light">
-                <input name="answer" type="radio" value="${option}" /> &nbsp; ${option}
-                </li>`
-    }).join(" ")}
+            ${
+                question.options.map(option => {
+                let optionTemplate = `
+                        <li class="list-group-item bg-light">
+                            <input name="q-option" type="radio" value="${option}" /> &nbsp; ${option}
+                        </li>`
+                return optionTemplate;          
+                }).join(" ")
+            }
         </ul>
         `;
     return qTemplate;
 }
 
-let idx = 0;
-document.getElementById('box').innerHTML = renderNextOrPevQuestion(questions[0]);
+
+function recordAns(e) {
+    userAnswers[questions[idx].number] = e.target.value;
+    console.log(userAnswers);
+}
+
+function renderQuestion() {
+    document.getElementById('box').innerHTML = getQuestion(questions[idx]);
+    document.getElementsByName('q-option')
+        .forEach(answerEle => {
+            answerEle.addEventListener('click', recordAns)
+        })
+}
+
+renderQuestion();
 prevBtn.disabled = true;
 nextBtn.addEventListener('click', e => {
     idx++;
-    document.getElementById('box').innerHTML = renderNextOrPevQuestion(questions[idx]);
+    renderQuestion();
     if (idx === questions.length - 1) {
         nextBtn.disabled = true
     }
@@ -76,11 +93,22 @@ nextBtn.addEventListener('click', e => {
 })
 prevBtn.addEventListener('click', e => {
     idx--;
-    document.getElementById('box').innerHTML = renderNextOrPevQuestion(questions[idx]);
+    renderQuestion();
     if (idx == 0) {
         prevBtn.disabled = true
     }
     if (idx !== questions.length - 1) {
         nextBtn.disabled = false
     }
+})
+endBtn.addEventListener('click', e => {
+    for (let q of questions) {
+        let userAns = userAnswers[q.number];
+        if (userAns === q.answer) {
+            report[q.number] = "correct"
+        } else {
+            report[q.number] = "incorrect"
+        }
+    }
+    console.log(report)
 })
