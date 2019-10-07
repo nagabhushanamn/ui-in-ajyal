@@ -126,4 +126,26 @@ why we need  build tools for UI application?
 
 
 ------------------------------------------------            
+How javascript works/executes in browser ?
+--------------------------------------------------
+
+browser e.g chrome
+    1. javascript engine
+        a. call-stack  ==> to execute function(s)
+        b. heap        ==> to keep objects 
+    2. browser's API ( DOM , XHR , Timer,...)
+    3. Event Queue
+    4. Event Loop
+
+ --------------------------------------------------
+
+
+javascript language is
+
+    => single-threaded process
+    => all IO operations are non-blocking
+
+------------------------------------------------    
+
+
 
