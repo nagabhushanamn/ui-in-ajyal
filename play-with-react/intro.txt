@@ -1,0 +1,39 @@
+
+------------------------------------------------------
+naming conventions
+------------------------------------------------------
+
+package names ==> lower-case
+class         ==> pascal-case  --> A____B____C___
+var/functions ==> camel-case   --> _____A____B____
+constantants  ==> upper-case 
+
+------------------------------------------------------
+
+
+
+
+> sudo npm i -g yarn  ( alternative to npm)   
+
+To create new react-project:
+---------------------------
+
+> npx create-react-app <project-name>
+> cd <project-name>
+> yarn start  or npm start
+
+
+-----------------------------------------
+react.js topics
+-----------------------------------------
+
+-> what is component
+-> state & props
+-> life-cycle methods
+-> inter-component communication
+-> context
+-> container components
+-> higher-order-components
+-> handling forms
+
+---------------------------------------------
