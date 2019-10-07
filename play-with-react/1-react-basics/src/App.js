@@ -5,11 +5,19 @@ import PropTypes from 'prop-types'
 import Greet from './Greet';
 
 class App extends Component {
-  state = {
-    message: 'welcome'
+  // state = {
+  //   message: 'welcome'
+  // }
+  constructor(props) {
+    super();
+    console.log("App :: constructor()");
+    //console.dir(props)
+    this.state = {
+      message: 'welcome ' + props.author
+    }
   }
   changeMessage(message) {
-    this.setState({ message })
+    this.setState({ message })// 
   }
   render() {
     console.log("App :: render()")
@@ -17,6 +25,9 @@ class App extends Component {
     // let trainer=this.props.trainer;
     // or
     let { title, author } = this.props; // de-structuring
+
+    // this.props.title=""; // error
+
     return (
       <div className="container">
         <hr />
@@ -25,14 +36,23 @@ class App extends Component {
           by <small><span className="badge badge-dark">{author}</span></small>
         </h1>
         <hr />
-        <button onClick={e => this.changeMessage("hello")} className="btn btn-danger">english</button>&nbsp;
-        <button onClick={e => this.changeMessage("مرحبا")} className="btn btn-danger">arabic</button>&nbsp;
-        <button onClick={e => this.changeMessage("வணக்கம்")} className="btn btn-danger">tamil</button>&nbsp;
+        <button onClick={e => this.changeMessage("hello")} className="btn btn-dark">english</button>&nbsp;
+        <button onClick={e => this.changeMessage("مرحبا")} className="btn btn-dark">arabic</button>&nbsp;
+        <button onClick={e => this.changeMessage("வணக்கம்")} className="btn btn-dark">tamil</button>&nbsp;
+        <button onClick={e => this.changeMessage("")} className="btn btn-danger">remove greet</button>&nbsp;
         <hr />
-        <Greet message={this.state.message} />
+        {this.state.message ? <Greet message={this.state.message} /> : null}
       </div>
     )
   }
+
+  componentDidMount() {
+    console.log("App :: componentDidMount()")
+  }
+  componentDidUpdate() {
+    console.log("App :: componentDidUpdate()")
+  }
+
 }
 App.defaultProps = {
   //title: 'Unknown',

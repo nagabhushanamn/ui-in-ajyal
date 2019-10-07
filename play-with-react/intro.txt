@@ -36,4 +36,21 @@ react.js topics
 -> higher-order-components
 -> handling forms
 
----------------------------------------------
+----------------------------------------------
+props
+------
+
+ ==> data that will from parent component for customization
+ ==> immutable
+
+state
+------
+    
+ ==> component's own data   
+ ==> mutable
+ ==> if state changes, component always re-render
+
+ ---------------------------------------------------
+
+
+
