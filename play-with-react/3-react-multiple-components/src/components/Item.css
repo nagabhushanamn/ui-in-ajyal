@@ -6,3 +6,9 @@
     padding: 10px;
     float: left;
 }
+.item-btn{
+    float: left;
+}
+.item-btn button{
+    margin: 10px;
+}

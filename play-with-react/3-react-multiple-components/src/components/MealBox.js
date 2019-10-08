@@ -5,9 +5,9 @@ class MealBox extends Component {
     state = {
         totalPrice: 0
     }
-    incrementTotalPrice() {
+    calculateTotalPrice(e) {
         let { totalPrice } = this.state;
-        totalPrice++;
+        totalPrice += e.price;
         this.setState({ totalPrice })
     }
     render() {
@@ -16,8 +16,8 @@ class MealBox extends Component {
             <div className="card">
                 <div className="card-header">Meal Box : <span className="badge badge-danger">&#8377;{totalPrice}</span></div>
                 <div className="card-body">
-                    <Item value="Veg" price={100} onBuy={e => this.incrementTotalPrice()} />
-                    <Item value="Non-Veg" price={200} onBuy={e => this.incrementTotalPrice()} />
+                    <Item value="Veg" price={100} onBuy={e => this.calculateTotalPrice(e)} />
+                    <Item value="Non-Veg" price={200} onBuy={e => this.calculateTotalPrice(e)} />
                 </div>
             </div>
         );
