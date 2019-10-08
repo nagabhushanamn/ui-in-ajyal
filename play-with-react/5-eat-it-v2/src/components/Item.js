@@ -4,7 +4,7 @@ class Item extends Component {
 
     state = {
         currentTab: 1,
-        itemQty: 0
+        // itemQty: 0
     }
 
     changeTab(tabIndex, e) {
@@ -13,12 +13,13 @@ class Item extends Component {
     }
 
     buy() {
-        let { itemQty } = this.state
-        itemQty++
-        this.setState({ itemQty }, () => {
-            let { onBuy, value: item } = this.props;
+        // let { itemQty } = this.state
+        // itemQty++
+        this.setState({}, () => {
+            let { onBuy, item } = this.props;
             if (onBuy) {
-                onBuy({ item })
+                let event = { item };
+                onBuy(event)
             }
         }) // async
     }
@@ -34,8 +35,8 @@ class Item extends Component {
     }
 
     render() {
-        let { value: item } = this.props;
-        let { currentTab, itemQty } = this.state;
+        let { item, itemQty } = this.props;
+        let { currentTab } = this.state;
         return (
             <div>
                 <div className="row">
