@@ -1,0 +1,10 @@
+
+
+
+how inter-component communication can happen ?
+
+    - parent --> child   via props
+    - child  --> parent  via events
+
+
+    
