@@ -4,13 +4,24 @@ class Item extends Component {
 
     state = {
         currentTab: 1,
+        itemQty: 0
     }
 
     changeTab(tabIndex, e) {
-        e.preventDefault();
+        e.preventDefault()
         this.setState({ currentTab: tabIndex })
     }
 
+    buy() {
+        let { itemQty } = this.state
+        itemQty++
+        this.setState({ itemQty }, () => {
+            let { onBuy, value: item } = this.props;
+            if (onBuy) {
+                onBuy({ item })
+            }
+        }) // async
+    }
 
     renderTabPanel(item) {
         let { currentTab } = this.state;
@@ -24,8 +35,7 @@ class Item extends Component {
 
     render() {
         let { value: item } = this.props;
-        let { currentTab } = this.state;
-
+        let { currentTab, itemQty } = this.state;
         return (
             <div>
                 <div className="row">
@@ -36,7 +46,8 @@ class Item extends Component {
                         <div>
                             <h5>{item.name}</h5>
                             <h6>&#8377;{item.price}</h6>
-                            <button disabled={!item.canBuy} className="btn btn-sm btn-dark">buy</button>
+                            <button onClick={e => this.buy()} disabled={!item.canBuy} className="btn btn-sm btn-dark">buy</button>
+                            &nbsp;<span className="badge badge-warning">{itemQty}</span>
                             <ul className="nav nav-tabs">
                                 <li className="nav-item">
                                     <a onClick={e => this.changeTab(1, e)} className={currentTab === 1 ? 'nav-link active' : 'nav-link'} href="/">description</a>
