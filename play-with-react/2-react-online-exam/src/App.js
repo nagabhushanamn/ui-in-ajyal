@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import Question from './Question';
 
 class App extends React.Component {
+  
   state = {
     currentQuesIdx: 0,
     questions: [
@@ -29,6 +30,7 @@ class App extends React.Component {
       },
     ]
   }
+
   nextHandler() {
     let { currentQuesIdx } = this.state;
     this.setState({ currentQuesIdx: ++currentQuesIdx })
@@ -37,6 +39,7 @@ class App extends React.Component {
     let { currentQuesIdx } = this.state;
     this.setState({ currentQuesIdx: --currentQuesIdx })
   }
+
   render() {
     let { questions, currentQuesIdx } = this.state;
     let question = questions[currentQuesIdx];

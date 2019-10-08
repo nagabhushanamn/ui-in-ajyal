@@ -1,0 +1,70 @@
+
+
+
+------------------------------------------------------
+day-1 :
+------------------------------------------------------
+
+        - what is web ui   
+            -> brief on web-ui fundamental
+
+        - HTML vs CSS vs JavaScript vs browser-web-apis  
+            -> brief lecture & practicals on understanding diffence between UI-design,language and various browser apis
+
+------------------------------------------------------
+day-2 :
+------------------------------------------------------
+        - UI design fundamental
+            -> traditional UI design issues
+            -> component based architectue introduction
+            
+        - UI design with components
+            -> pinciples of web components
+            -> advantages of UI components for modern UI   
+
+------------------------------------------------------
+day-3 :
+------------------------------------------------------
+
+        - React.js introduction
+            -> brief on why we need react.js
+            -> and react setup and basic example(s)
+
+        - How React.js works
+            -> browser-DOM vs in-memory/virtual DOM    
+            -> live-demo with & without react.js , to profile perfomance diffence, to prove why react.js is best
+
+------------------------------------------------------
+day-4 :
+------------------------------------------------------
+
+        - case-study ( level-1 : introduction)
+
+        - case-study ( level-2 : with multiple components)
+
+------------------------------------------------------
+day-5 :
+------------------------------------------------------
+
+        - JavaScript ( core concepts )
+            -> recap on all javascipt core concepts
+
+        - JavaScript ( advanced syntax & apis )
+            -> recap on es6 syntax and apis
+
+------------------------------------------------------
+day-6  :
+------------------------------------------------------
+
+        - React.js
+
+            -> state & props
+            -> life-cycle methods
+
+        - React.js 
+
+            -> online-exam app with react.js     
+
+
+
+
