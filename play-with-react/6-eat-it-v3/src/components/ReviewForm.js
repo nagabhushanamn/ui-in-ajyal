@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class ReviewForm extends Component {
     state = {
-        isOpen: false
+        isOpen: false,
+        errors: {}
     }
     toggleForm() {
         this.setState({ isOpen: !this.state.isOpen })
@@ -16,11 +17,31 @@ class ReviewForm extends Component {
             author: this.refs.author.value,
             body: this.refs.body.value,
         }
-        let { onSubmit } = this.props;
-        if (onSubmit) {
-            onSubmit({ formData })
+
+        let { errors } = this.state;
+        if (formData.author === "") {
+            let { errors } = this.state;
+            errors['author'] = "Author is required"
+        } else {
+            delete errors['author'];
         }
-        this.toggleForm();
+        if (formData.body === "") {
+            let { errors } = this.state;
+            errors['body'] = "Body is required"
+        } else {
+            delete errors['body'];
+        }
+
+        if (Object.keys(this.state.errors).length === 0) {
+            let { onSubmit } = this.props;
+            if (onSubmit) {
+                onSubmit({ formData })
+            }
+            this.toggleForm();
+        } else {
+            this.setState({ errors })        // <div className="text-danger">{this.state.errors[field]}</div>
+        }
+
     }
     renderForm() {
         let { isOpen } = this.state;
@@ -43,10 +64,12 @@ class ReviewForm extends Component {
                             <div>
                                 <label>author</label>
                                 <input type="email" className="form-control" name="author" ref="author" />
+                                <div className="text-danger">{this.state.errors['author']}</div>
                             </div>
                             <div>
                                 <label>body</label>
                                 <textarea className="form-control" name="body" ref="body"></textarea>
+                                <div className="text-danger">{this.state.errors['body']}</div>
                             </div>
                             <button className="btn btn-dark">submit</button>
                             &nbsp;
