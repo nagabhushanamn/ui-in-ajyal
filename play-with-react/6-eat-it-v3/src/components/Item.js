@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
+import Review from './Review';
+import ReviewForm from './ReviewForm';
 
 class Item extends Component {
 
     state = {
         currentTab: 1,
+        reviews: [
+            { stars: 5, author: 'who1@mail.com', body: 'sample review-1' },
+            { stars: 1, author: 'who2@mail.com', body: 'sample review-2' }
+        ]
         // itemQty: 0
     }
 
@@ -23,13 +29,30 @@ class Item extends Component {
             }
         }) // async
     }
-
+    renderReviews() {
+        let { reviews } = this.state;
+        return reviews.map((review, idx) => {
+            return (
+                <Review review={review} key={idx} />
+            )
+        })
+    }
+    addNewReview(e) {
+        let { formData: newReview } = e;
+        let { reviews } = this.state;
+        reviews = reviews.concat(newReview)
+        this.setState({ reviews })
+    }
     renderTabPanel(item) {
         let { currentTab } = this.state;
         switch (currentTab) {
             case 1: return (<div>{item.description}</div>)
             case 2: return (<div>{"chef on holiday.."}</div>)
-            case 3: return (<div>{"None yet"}</div>)
+            case 3: return (
+                <div>
+                    {this.renderReviews()}
+                    <ReviewForm onSubmit={e => this.addNewReview(e)} />
+                </div>)
             default: return null;
         }
     }

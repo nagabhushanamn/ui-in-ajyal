@@ -23,24 +23,21 @@ class App extends Component {
   state = {
     cart: {},// empty
     cartQty: 0,
-    items: [
-      {
-        id: 1,
-        name: 'Veg',
-        price: 100.00,
-        canBuy: true,
-        imgPath: 'images/veg.png',
-        description: 'veg is healthy'
-      },
-      {
-        id: 2,
-        name: 'Non-Veg',
-        price: 200.00,
-        canBuy: true,
-        imgPath: 'images/non-veg.png',
-        description: 'non-veg is yummy , not healthy always'
-      },
-    ]
+    items: []
+  }
+
+  componentDidMount() {
+
+    fetch('items.json')
+      .then(response => response.json())
+      .then(items => {
+        this.setState({ items })
+      })
+
+    let text = localStorage.getItem('my-cart');
+    let cart = JSON.parse(text) || [];
+    this.setState({ cart })
+
   }
 
   // state change logic
@@ -51,23 +48,33 @@ class App extends Component {
   }
 
   addToCart(e) {
+
     let { cart } = this.state;
-    let { item } = e;
+    let { item, qty } = e;
+    qty = qty || 1;
     let { id } = item;
     let cartLine = cart[id];
     if (!cartLine) {
       cartLine = { item, itemQty: 1 }
     } else {
-      cartLine = { ...cartLine, itemQty: cartLine.itemQty + 1 }
+      cartLine = { ...cartLine, itemQty: cartLine.itemQty + qty }
     }
-    cart = { ...cart, [id]: cartLine }
+
+    if (cartLine.itemQty === 0) {
+      delete cart[id]
+    } else {
+      cart = { ...cart, [id]: cartLine }
+    }
+
     let cartQty = Object.keys(cart).length
-    this.setState({ cart, cartQty })
+    this.setState({ cart, cartQty }, () => {
+      localStorage.setItem("my-cart", JSON.stringify(cart))
+    })
   }
 
   renderCart() {
     let { cart } = this.state;
-    return <CartView cart={cart} />
+    return <CartView cart={cart} onBuy={e => this.addToCart(e)} />
   }
   renderItems() {
     let { items, cart } = this.state;
@@ -123,7 +130,6 @@ class App extends Component {
             </div>
           </div>
         </Router>
-
       </div>
     );
   }

@@ -54,3 +54,25 @@ state
 
 
 
+
+Tools
+-----------
+
+    -> editor : VS code
+    -> package manager : NPM 
+    -> transpiler : babel
+    -> bundler  : webpack
+
+
+    -> server : live-server / webpack-dev-server
+
+----------------------------------------------------------
+
+
+
+
+
+
+
+
+

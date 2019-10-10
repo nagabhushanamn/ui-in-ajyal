@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "name": "Veg",
+        "price": 100,
+        "canBuy": true,
+        "imgPath": "images/veg.png",
+        "description": "veg is healthy"
+    },
+    {
+        "id": 2,
+        "name": "Non-Veg",
+        "price": 200,
+        "canBuy": true,
+        "imgPath": "images/non-veg.png",
+        "description": "non-veg is yummy , not healthy always"
+    }
+    
+]
