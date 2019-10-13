@@ -3,18 +3,16 @@ import Review from './Review';
 import ReviewForm from './ReviewForm_v2';
 
 class Item extends Component {
-
     state = {
         currentTab: 1,
         reviews: []
         // itemQty: 0
     }
-
     changeTab(tabIndex, e) {
         e.preventDefault()
         this.setState({ currentTab: tabIndex }, () => {
             if (tabIndex === 3) {
-                fetch(`http://localhost:8080/api/items/${this.props.item.id}/reviews`, { method: 'GET' })
+                fetch(`http://192.168.1.113:8080/api/items/${this.props.item.id}/reviews`, { method: 'GET' })
                     .then(response => response.json())
                     .then(allReviews => {
                         let { item } = this.props;
@@ -49,7 +47,7 @@ class Item extends Component {
     addNewReview(e) {
         let { formData: newReview } = e;
         let body = { ...newReview, itemId: this.props.item.id };
-        fetch(`http://localhost:8080/api/items/${this.props.item.id}/reviews`,
+        fetch(`http://192.168.1.113:8080/api/items/${this.props.item.id}/reviews`,
             {
                 method: 'POST',
                 body: JSON.stringify(body),

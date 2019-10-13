@@ -44,7 +44,7 @@ class ReviewForm extends Component {
                     <div className="card-header">Review Form</div>
                     <div className="card-body">
                         <form noValidate onSubmit={e => this.handleFormSubmit(e)}>
-                            <div>
+                            <div className="form-group">
                                 <label>stars</label>
                                 <select className="form-control"
                                     value={stars}
@@ -54,7 +54,7 @@ class ReviewForm extends Component {
                                 </select>
                                 <div className="text-danger">{stars < 3 ? 'please provide detailed reason in body field' : ''}</div>
                             </div>
-                            <div>
+                            <div className="form-group">
                                 <label>author</label>
                                 <input type="email"
                                     className="form-control"
@@ -62,7 +62,7 @@ class ReviewForm extends Component {
                                     onChange={e => this.handleChange(e)} />
                                 <div className="text-danger">{author === "" ? 'say who u r' : ''}</div>
                             </div>
-                            <div>
+                            <div className="form-group">
                                 <label>body</label>
                                 <textarea className="form-control"
                                     value={body}
