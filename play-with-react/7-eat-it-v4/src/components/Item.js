@@ -14,7 +14,7 @@ class Item extends Component {
         e.preventDefault()
         this.setState({ currentTab: tabIndex }, () => {
             if (tabIndex === 3) {
-                fetch('reviews.json', { method: 'GET' })
+                fetch(`http://localhost:8080/api/items/${this.props.item.id}/reviews`, { method: 'GET' })
                     .then(response => response.json())
                     .then(allReviews => {
                         let { item } = this.props;
@@ -47,21 +47,22 @@ class Item extends Component {
         })
     }
     addNewReview(e) {
-
         let { formData: newReview } = e;
-        
-        // let body = { ...newReview, itemId: this.props.item.id };
-        // fetch('reviews.json', { method: 'POST', body: JSON.stringify(body) })
-        //     .then(response => {
-        //         let { reviews } = this.state;
-        //         reviews = reviews.concat(newReview)
-        //         this.setState({ reviews })
-        //     })
-
-        let { reviews } = this.state;
-        reviews = reviews.concat(newReview)
-        this.setState({ reviews })
-
+        let body = { ...newReview, itemId: this.props.item.id };
+        fetch(`http://localhost:8080/api/items/${this.props.item.id}/reviews`,
+            {
+                method: 'POST',
+                body: JSON.stringify(body),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => response.json())
+            .then(review => {
+                let { reviews } = this.state;
+                reviews = reviews.concat(review)
+                this.setState({ reviews })
+            })
     }
     renderTabPanel(item) {
         let { currentTab } = this.state;

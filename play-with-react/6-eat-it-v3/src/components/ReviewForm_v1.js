@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Filter from 'bad-words';
 
 class ReviewForm extends Component {
     state = {
@@ -35,6 +36,8 @@ class ReviewForm extends Component {
         if (Object.keys(this.state.errors).length === 0) {
             let { onSubmit } = this.props;
             if (onSubmit) {
+                let filter = new Filter();
+                formData.body = filter.clean(formData.body);
                 onSubmit({ formData })
             }
             this.toggleForm();
