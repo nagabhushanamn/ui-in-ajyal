@@ -3,6 +3,7 @@ import A from './components/A';
 import Box from './components/Box';
 import VegItem from './components/VegItem';
 import NonVegItem from './components/NonVegItem';
+import TopicList from './components/TopicList';
 
 
 function contextDemo() {
@@ -24,33 +25,33 @@ function containerComponentDemo() {
   return (
     <div>
 
-    {/* <h5>container-component(s)</h5> */}
+      {/* <h5>container-component(s)</h5> */}
 
-    {
-      /* 
-      <Box>
-        <h1>Veg only</h1>
-        <VegItem />
-        <VegItem />
-        <VegItem />
-      </Box>
-
-      <Box>
-        <h1>Non-Veg only</h1>
-        <NonVegItem />
-        <NonVegItem />
-        <NonVegItem />
-        <NonVegItem />
-      </Box>
-
-      <Box>
-        <h1> Veg & Non-Veg </h1>
-        <VegItem />
-        <NonVegItem />
-      </Box> 
-      
-      */
-     }
+      {
+        /* 
+        <Box>
+          <h1>Veg only</h1>
+          <VegItem />
+          <VegItem />
+          <VegItem />
+        </Box>
+  
+        <Box>
+          <h1>Non-Veg only</h1>
+          <NonVegItem />
+          <NonVegItem />
+          <NonVegItem />
+          <NonVegItem />
+        </Box>
+  
+        <Box>
+          <h1> Veg & Non-Veg </h1>
+          <VegItem />
+          <NonVegItem />
+        </Box> 
+        
+        */
+      }
 
     </div>
   )
@@ -64,6 +65,14 @@ function App() {
       <hr />
       {/* {contextDemo()} */}
       {/* {containerComponentDemo()} */}
+
+      <div className="row">
+        <div className="col-md-6">
+          <TopicList />
+        </div>
+        <div className="col-md-6"></div>
+      </div>
+
     </div>
   );
 }
