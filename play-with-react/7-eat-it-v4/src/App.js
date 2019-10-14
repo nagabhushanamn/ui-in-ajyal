@@ -28,7 +28,7 @@ class App extends Component {
 
   componentDidMount() {
 
-    fetch('http://192.168.1.113:8080/api/items')
+    fetch('http://localhost:8080/api/items')
       .then(response => response.json())
       .then(items => {
         this.setState({ items })

@@ -12,7 +12,7 @@ class Item extends Component {
         e.preventDefault()
         this.setState({ currentTab: tabIndex }, () => {
             if (tabIndex === 3) {
-                fetch(`http://192.168.1.113:8080/api/items/${this.props.item.id}/reviews`, { method: 'GET' })
+                fetch(`http://localhost:8080/api/items/${this.props.item.id}/reviews`, { method: 'GET' })
                     .then(response => response.json())
                     .then(allReviews => {
                         let { item } = this.props;
@@ -47,7 +47,7 @@ class Item extends Component {
     addNewReview(e) {
         let { formData: newReview } = e;
         let body = { ...newReview, itemId: this.props.item.id };
-        fetch(`http://192.168.1.113:8080/api/items/${this.props.item.id}/reviews`,
+        fetch(`http://localhost:8080/api/items/${this.props.item.id}/reviews`,
             {
                 method: 'POST',
                 body: JSON.stringify(body),

@@ -17,7 +17,8 @@ class App extends Component {
     }
   }
   changeMessage(message) {
-    this.setState({ message })// 
+    this.setState({ message })//
+    this.setState({ message:"ha ha" })// 
   }
   render() {
     console.log("App :: render()")
