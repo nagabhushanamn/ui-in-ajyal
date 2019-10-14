@@ -8,16 +8,18 @@ class CommentList extends Component {
         this.state = {
             comments: []
         }
-    }
-    renderComments() {
-        let { comments } = this.state;
-        return comments.map((comment, idx) => {
-            return (<li key={idx}
-                className="list-group-item">{comment}</li>)
-        })
-    }
+    } 
     componentDidMount() {
         console.log("CommentList :: componentDidMount()");
+        this.unsubscibe = store.subscibe(() => {
+            let { topic } = this.props;
+            let comments = store.getState().comments[topic] || [];
+            this.setState({ comments })
+        });
+    }
+    componentWillUnmount() {
+        console.log("CommentList :: componentWillUnmount")
+        this.unsubscibe();
     }
     componentDidUpdate(prevProps) {
         console.log("CommentList :: componentDidUpdate()");
@@ -27,6 +29,13 @@ class CommentList extends Component {
             let comments = store.getState().comments[this.props.topic]
             this.setState({ comments })
         }
+    }
+    renderComments() {
+        let { comments } = this.state;
+        return comments.map((comment, idx) => {
+            return (<li key={idx}
+                className="list-group-item">{comment}</li>)
+        })
     }
     render() {
         let { comments } = this.state;

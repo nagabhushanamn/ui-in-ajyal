@@ -9,6 +9,16 @@ class TopicList extends Component {
             topics: store.getState().topics,
             topic: ''
         }
+    } 
+    componentDidMount() {
+        this.unsubscibe = store.subscibe(() => {
+            let topics = store.getState().topics;
+            this.setState({ topics })
+        });
+    }
+    componentWillUnmount() {
+        console.log("Toplict :: componentWillUnmount")
+        this.unsubscibe();
     }
     selectTopic(topic) {
         this.setState({ topic }, () => {
