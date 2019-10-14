@@ -3,7 +3,7 @@ import A from './components/A';
 import Box from './components/Box';
 import VegItem from './components/VegItem';
 import NonVegItem from './components/NonVegItem';
-import TopicList from './components/TopicList';
+import ClassRoom from './components/ClassRoom';
 
 
 function contextDemo() {
@@ -66,12 +66,7 @@ function App() {
       {/* {contextDemo()} */}
       {/* {containerComponentDemo()} */}
 
-      <div className="row">
-        <div className="col-md-6">
-          <TopicList />
-        </div>
-        <div className="col-md-6"></div>
-      </div>
+      <ClassRoom />
 
     </div>
   );
