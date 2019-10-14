@@ -1,0 +1,12 @@
+
+
+
+react advanced concepts
+------------------------
+
+ - component's context
+ - container components
+ 
+ - higher-order-components
+ - hooks
+ - unit-testing
