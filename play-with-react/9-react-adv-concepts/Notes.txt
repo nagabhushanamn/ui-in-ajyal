@@ -6,7 +6,9 @@ react advanced concepts
 
  - component's context
  - container components
- 
+
+ - higher-order-programming 
  - higher-order-components
+
  - hooks
  - unit-testing

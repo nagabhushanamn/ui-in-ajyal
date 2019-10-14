@@ -1,18 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import A from './components/A';
 import Box from './components/Box';
 import VegItem from './components/VegItem';
 import NonVegItem from './components/NonVegItem';
 
-function App() {
-  return (
-    <div className="container">
-      <hr />
-      <h1> React Adv concepts</h1>
-      <hr />
 
+function contextDemo() {
+  return (
+    <div>
+      {/* <h5>component's context</h5> */}
       {
         /* 
         <A color="red"/>
@@ -20,8 +16,18 @@ function App() {
         <A color="green"/> 
         */
       }
+    </div>
+  )
+}
 
+function containerComponentDemo() {
+  return (
+    <div>
 
+    {/* <h5>container-component(s)</h5> */}
+
+    {
+      /* 
       <Box>
         <h1>Veg only</h1>
         <VegItem />
@@ -41,9 +47,23 @@ function App() {
         <h1> Veg & Non-Veg </h1>
         <VegItem />
         <NonVegItem />
-      </Box>
+      </Box> 
+      
+      */
+     }
 
+    </div>
+  )
+}
 
+function App() {
+  return (
+    <div className="container">
+      <hr />
+      <h1> React Adv concepts</h1>
+      <hr />
+      {/* {contextDemo()} */}
+      {/* {containerComponentDemo()} */}
     </div>
   );
 }
