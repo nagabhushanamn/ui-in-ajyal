@@ -1,71 +1,46 @@
 
+-------------------------------------------
+UI
+-------------------------------------------
 
+ part-1 : state-management-logic
 
-Voting App
-------------
-
-  - Dog
-  - Cat
-
-
-
-  design issues
-  ---------------
-
-  ==> state is scattered across components
-  ==> state & state-change logic tightly-coupled with UI cimponents
-
-  i.e we can't re-use same UI component with different needs
-
-  soln:
-
-    => isolate state & state-change from UI components
-
-  how ?
-
-    using 'flux' design pattern  : from facebook
-
-
-  -------------------------------------------------
-
-
-  basic steps to use redux lib to state manageemnt
-
+ part-2 : UI-logic
 
  -------------------------------------------
-  step-1 : identify state that reperesent UI
- -------------------------------------------
-
-  - votes
-
-  -------------------------------------------
-  step-2 : identify action which cause state chane
- -------------------------------------------
-  
-  - up-vote
-  - down-vote
-
- -------------------------------------------
-  step-3 :define 'reducer' to  process action to do state change 
- -------------------------------------------
-  
-  - voteReducer
-
- -------------------------------------------
-  step-4 : create store  with initial state & reducer
- -------------------------------------------
-
- - store
 
 
+ e.g Voting-system
+ --------------------
 
----------------------------------------------
+----------------------------------------------
+ step-1 : identify state
+----------------------------------------------
+
+  => votes = {
+              item:{up:0,down:0}
+              totalVotes:0,
+              mostPopular:'item'
+             }
+
+----------------------------------------------
+ step-2 : identify action
+----------------------------------------------
+
+  - UP_VOTE
+  - DOWN_VOTE
+
+  action = {type,item}
 
 
-install redux package
+----------------------------------------------
+ step-3 : process action(s)
+----------------------------------------------
 
+   - votesReducer()
 
-  > npm i redux  or yarn add redux
+----------------------------------------------
+ step-4 : create store with reducer(s)
+----------------------------------------------
 
-
-  
+  - store
