@@ -1,0 +1,26 @@
+[
+    {
+        "itemId": 1,
+        "stars": 5,
+        "author": "who1@mail.com",
+        "body": "veg is good"
+    },
+    {
+        "itemId": 1,
+        "stars": 1,
+        "author": "who1@mail.com",
+        "body": "veg is bad"
+    },
+    {
+        "itemId": 2,
+        "stars": 5,
+        "author": "who2@mail.com",
+        "body": "non-veg is good"
+    },
+    {
+        "itemId": 2,
+        "stars": 2,
+        "author": "who2@mail.com",
+        "body": "non-veg is bad"
+    }
+]

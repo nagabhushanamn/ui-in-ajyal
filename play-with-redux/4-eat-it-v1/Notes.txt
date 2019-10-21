@@ -1,0 +1,13 @@
+
+
+
+  how to persist client-specific data at client(browser) side ?
+
+  many ways
+  ----------
+
+    -> cookies
+    -> sessionStorage
+    -> localStorage   
+    -> indexedDB
+    -> serviceWokers
