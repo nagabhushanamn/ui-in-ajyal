@@ -1,10 +1,47 @@
 
 
 
+UI e.g eat-IT 
+----------------
 
-eat-IT
-----------
+---------------------------------------------------
+step-1 : identify state/data that makes dynamic UI
+---------------------------------------------------
 
-  - items
-  - reviews
-  - cart
+ - items
+ - reviews
+ - cart
+ - orders
+ - user
+ ....
+
+
+ imp-note : state is mutable
+
+
+---------------------------------------------------
+step-2 : identify actions/operations/events which mutate state
+---------------------------------------------------
+
+- LOAD_ITEMS
+
+- LOAD_REVIEWS
+- ADD_NEW_REVIEW
+
+- BUY / ADD_TO_CART
+- CHECKOUT
+
+- LOGIN
+- REGISTER
+- LOGOUT
+
+.....
+
+---------------------------------------------------
+step-3 : process action(s) using function / reducer to make new-state
+---------------------------------------------------
+
+---------------------------------------------------
+step-4 : keep all UI state in one-place / store
+---------------------------------------------------
+

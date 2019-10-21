@@ -16,7 +16,9 @@ const ReviewForm = props => {
         let formData = { stars, author, body }
         let { onSubmit } = props;
         if (onSubmit) {
+            
             onSubmit({ formData })
+
             setIsOpen(false)
             setStars(5)
             setAuthor('Nag')

@@ -15,20 +15,15 @@ import {
   Link,
   Switch,
 } from "react-router-dom";
+import ItemList from './components/ItemList';
 
 const App = (props) => {
-  
+
   let [cart, setCart] = useState({})
   let [cartQty, setCartQty] = useState(0)
 
-  let [items, setItems] = useState([])
- 
+
   useEffect(() => {
-    fetch('items.json')
-      .then(response => response.json())
-      .then(items => {
-        setItems(items)
-      })
     let text = localStorage.getItem('my-cart');
     let cart = JSON.parse(text) || [];
     setCart(cart)
@@ -64,17 +59,6 @@ const App = (props) => {
   const renderCart = () => {
     return <CartView cart={cart} onBuy={e => addToCart(e)} />
   }
-  const renderItems = () => {
-    return items.map((item) => {
-      let cartLine = cart[item.id] || {}
-      let itemQty = cartLine.itemQty || 0;
-      return (
-        <div key={item.id} className="list-group-item">
-          <Item item={item} itemQty={itemQty} onBuy={e => addToCart(e)} />
-        </div>
-      )
-    })
-  }
 
   return (
     <div>
@@ -107,7 +91,7 @@ const App = (props) => {
           <div className="container">
             <Switch>
               <Route exact={true} path={"/"} component={Dashboard} />
-              <Route path={"/items"} render={() => renderItems()} />
+              <Route path={"/items"} render={() => <ItemList />} />
               <Route path={"/cart"} render={() => renderCart()} />
               <Route path={"/login"} component={Login} />
               <Route component={NotFound} />

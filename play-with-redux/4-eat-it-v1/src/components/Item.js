@@ -2,25 +2,17 @@ import React, { useEffect, useState } from 'react';
 import Review from './Review';
 import ReviewForm from './ReviewForm';
 
+import { connect } from 'react-redux'
 
 const Item = (props) => {
 
     let [currentTab, setCurrentTab] = useState(1)
-    let [reviews, setReviews] = useState([])
- 
+
     useEffect(() => {
         if (currentTab === 3) {
-            fetch('reviews.json', { method: 'GET' })
-                .then(response => response.json())
-                .then(allReviews => {
-                    let { item } = props;
-                    return allReviews.filter(review => review.itemId === item.id)
-                })
-                .then(reviews => {
-                    setReviews(reviews)
-                })
+            props.loadReviews(props.item.id)
         }
-    })
+    },[currentTab])
 
     // #1
     const changeTab = (tabIndex, e) => {
@@ -39,7 +31,7 @@ const Item = (props) => {
 
     // #3
     const renderReviews = () => {
-        return reviews.map((review, idx) => {
+        return props.reviews.map((review, idx) => {
             return (
                 <Review review={review} key={idx} />
             )
@@ -48,9 +40,7 @@ const Item = (props) => {
 
     // #4
     const addNewReview = (e) => {
-        let { formData: newReview } = e;
-        reviews = reviews.concat(newReview)
-        setReviews(reviews)
+        
     }
 
     // #5
@@ -100,5 +90,23 @@ const Item = (props) => {
 }
 
 
-export default Item;
+
+
+const loadReviews = itemId => {
+    let reviews = [
+        { stars: 1, author: 'students', body: 'luch time, dont ask review' }
+    ]
+    return { type: 'LOAD_REVIEWS', reviews, itemId }
+}
+
+
+// HOP // hooks
+
+const mapStateToProps = (state, props) => {
+    return {
+        reviews: state.reviews[props.item.id] || []
+    }
+}
+const mapDispathToProps = { loadReviews };
+export default connect(mapStateToProps, mapDispathToProps)(Item);
 
