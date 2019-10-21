@@ -1,5 +1,5 @@
 import React from 'react';
-
+ 
 let total = 0.0;
 
 function renderCartItems(cart, onBuy) {

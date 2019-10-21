@@ -1,55 +1,60 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class ReviewForm extends Component {
-    state = {
-        isOpen: false,
-        stars: 5,
-        author: 'Nag',
-        body: ''
+const ReviewForm = props => {
+
+    let [isOpen, setIsOpen] = useState(false)
+    let [stars, setStars] = useState(5)
+    let [author, setAuthor] = useState("Nag")
+    let [body, setBody] = useState("")
+
+    const toggleForm = () => {
+        setIsOpen(!isOpen)
     }
-    toggleForm() {
-        this.setState({ isOpen: !this.state.isOpen })
-    }
-    handleFormSubmit(e) {
+
+    const handleFormSubmit = (e) => {
         e.preventDefault();
-        let { stars, author, body } = this.state;
         let formData = { stars, author, body }
-        let { onSubmit } = this.props;
+        let { onSubmit } = props;
         if (onSubmit) {
             onSubmit({ formData })
-            this.setState({
-                isOpen: false,
-                stars: 5,
-                author: 'Nag',
-                body: ''
-            })
+            setIsOpen(false)
+            setStars(5)
+            setAuthor('Nag')
+            setBody("")
         }
     }
-    handleChange(e) {
-        this.setState({ [e.target.id]: e.target.value });
+
+    const handleChange = (e) => {
+        // way-1
+        if (e.target.id === "stars")
+            setStars(e.target.value)
+        if (e.target.id === "author")
+            setAuthor(e.target.value)
+        if (e.target.id === "body")
+            setBody(e.target.value)
+
     }
-    isFormValid() {
-        let { author, body } = this.state;
+
+    const isFormValid = () => {
         if (author !== "" && body !== "") return true;
     }
-    renderForm() {
-        let { isOpen, stars, author, body } = this.state;
+    const renderForm = () => {
         if (!isOpen) {
             return (
-                <button onClick={e => this.toggleForm()} className="btn btn-sm btn-dark"><i className="fa fa-plus"></i></button>
+                <button onClick={e => toggleForm()} className="btn btn-sm btn-dark"><i className="fa fa-plus"></i></button>
             )
         } else {
             return (
                 <div className="card">
                     <div className="card-header">Review Form</div>
                     <div className="card-body">
-                        <form noValidate onSubmit={e => this.handleFormSubmit(e)}>
+                        <form noValidate onSubmit={e => handleFormSubmit(e)}>
                             <div>
                                 <label>stars</label>
                                 <select className="form-control"
                                     value={stars}
                                     id="stars"
-                                    onChange={e => this.handleChange(e)}>
+                                    onChange={e => handleChange(e)}>
                                     {[1, 2, 3, 4, 5].map(n => <option key={n}>{n}</option>)}
                                 </select>
                                 <div className="text-danger">{stars < 3 ? 'please provide detailed reason in body field' : ''}</div>
@@ -59,35 +64,36 @@ class ReviewForm extends Component {
                                 <input type="email"
                                     className="form-control"
                                     value={author} id="author"
-                                    onChange={e => this.handleChange(e)} />
+                                    onChange={e => handleChange(e)} />
                                 <div className="text-danger">{author === "" ? 'say who u r' : ''}</div>
                             </div>
                             <div>
                                 <label>body</label>
                                 <textarea className="form-control"
                                     value={body}
-                                    onChange={e => this.handleChange(e)}
+                                    onChange={e => handleChange(e)}
                                     id="body">
                                 </textarea>
                             </div>
-                            <button disabled={!this.isFormValid()} className="btn btn-dark">submit</button>
+                            <button disabled={!isFormValid()} className="btn btn-dark">submit</button>
                             &nbsp;
-                            <button onClick={e => this.toggleForm()} className="btn btn-danger">cancel</button>
+                            <button onClick={e => toggleForm()} className="btn btn-danger">cancel</button>
                         </form>
                     </div>
                 </div>
             )
         }
     }
-    render() {
-        return (
-            <div className="row">
-                <div className="col-12 col-sm-8 col-md-6">
-                    {this.renderForm()}
-                </div>
+
+    return (
+        <div className="row">
+            <div className="col-12 col-sm-8 col-md-6">
+                {renderForm()}
             </div>
-        );
-    }
+        </div>
+    );
+
 }
+
 
 export default ReviewForm;
